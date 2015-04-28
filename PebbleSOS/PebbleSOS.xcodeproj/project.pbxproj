@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3E5FEEBCAA04B06B99762C /* libPods-PebbleSOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */; };
 		5ADFF77D1AF0462600E74689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77C1AF0462600E74689 /* main.m */; };
 		5ADFF7801AF0462600E74689 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77F1AF0462600E74689 /* AppDelegate.m */; };
 		5ADFF7831AF0462600E74689 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF7821AF0462600E74689 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23D27C7B2587B05CD2AC94D5 /* Pods-PebbleSOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleSOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleSOS/Pods-PebbleSOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PebbleSOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF7771AF0462600E74689 /* PebbleSOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PebbleSOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF77B1AF0462600E74689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADFF77C1AF0462600E74689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		5ADFF7901AF0462600E74689 /* PebbleSOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleSOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF7951AF0462600E74689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADFF7961AF0462600E74689 /* PebbleSOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleSOSTests.m; sourceTree = "<group>"; };
+		B0B833ED85CF8A254480CDA3 /* Pods-PebbleSOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleSOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleSOS/Pods-PebbleSOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3E5FEEBCAA04B06B99762C /* libPods-PebbleSOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				5ADFF7791AF0462600E74689 /* PebbleSOS */,
 				5ADFF7931AF0462600E74689 /* PebbleSOSTests */,
 				5ADFF7781AF0462600E74689 /* Products */,
+				F812EE988BE0A8D3D9B9EBAF /* Pods */,
+				A50B8A06CEEA4BA6CD99C0CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A50B8A06CEEA4BA6CD99C0CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F812EE988BE0A8D3D9B9EBAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23D27C7B2587B05CD2AC94D5 /* Pods-PebbleSOS.debug.xcconfig */,
+				B0B833ED85CF8A254480CDA3 /* Pods-PebbleSOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5ADFF79A1AF0462600E74689 /* Build configuration list for PBXNativeTarget "PebbleSOS" */;
 			buildPhases = (
+				CECB495480F1A606D561A640 /* Check Pods Manifest.lock */,
 				5ADFF7731AF0462600E74689 /* Sources */,
 				5ADFF7741AF0462600E74689 /* Frameworks */,
 				5ADFF7751AF0462600E74689 /* Resources */,
+				685062493A9FEDB77ED25520 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		685062493A9FEDB77ED25520 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PebbleSOS/Pods-PebbleSOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CECB495480F1A606D561A640 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5ADFF7731AF0462600E74689 /* Sources */ = {
@@ -343,6 +402,7 @@
 		};
 		5ADFF79B1AF0462600E74689 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D27C7B2587B05CD2AC94D5 /* Pods-PebbleSOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PebbleSOS/Info.plist;
@@ -353,6 +413,7 @@
 		};
 		5ADFF79C1AF0462600E74689 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0B833ED85CF8A254480CDA3 /* Pods-PebbleSOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PebbleSOS/Info.plist;
@@ -414,6 +475,7 @@
 				5ADFF79C1AF0462600E74689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5ADFF79D1AF0462600E74689 /* Build configuration list for PBXNativeTarget "PebbleSOSTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +484,7 @@
 				5ADFF79F1AF0462600E74689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
