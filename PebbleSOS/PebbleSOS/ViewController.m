@@ -9,17 +9,24 @@
 #import "ViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+@import CoreLocation;
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    CLLocationManager *locationManager;
+    
+    CGFloat latitude;
+    CGFloat longitude;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.readPermissions = @[@"email", @"user_friends", @"publish_actions"];
+    //loginButton.readPermissions = @[@"email", @"user_friends"];
+    loginButton.publishPermissions = @[@"publish_actions"];
     loginButton.center = self.view.center;
     [self.view addSubview:loginButton];
     
@@ -29,7 +36,10 @@
     postData.frame = CGRectMake(38, 364 ,157,25);
     [postData addTarget:self action:@selector(postData:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:postData];
-
+    
+    locationManager = [[CLLocationManager alloc]init];
+    locationManager.delegate = self;
+    [locationManager requestAlwaysAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,12 +47,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) postData:(UIButton *) sender {
+#pragma mark - CLLocationManager Delegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    CLLocation *location = locations[0];
+    latitude = location.coordinate.latitude;
+    longitude = location.coordinate.longitude;
     
+    NSString *message = [NSString stringWithFormat:@"My location: %f, %f", latitude, longitude];
     if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
         [[[FBSDKGraphRequest alloc]
           initWithGraphPath:@"me/feed"
-          parameters: @{ @"message" : @"second message1, automatic?!"}
+          parameters: @{ @"message" : message}
           HTTPMethod:@"POST"]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error) {
@@ -61,7 +77,7 @@
                 if ([result.grantedPermissions containsObject:@"publish_actions"]) {
                     [[[FBSDKGraphRequest alloc]
                       initWithGraphPath:@"me/feed"
-                      parameters: @{ @"message" : @"second message, automatic?!"}
+                      parameters: @{ @"message" : message}
                       HTTPMethod:@"POST"]
                      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                          if (!error) {
@@ -73,6 +89,11 @@
         }];
         
     }
+}
+
+- (void) postData:(UIButton *) sender {
+    [locationManager startUpdatingLocation];
+
 }
 
 @end
