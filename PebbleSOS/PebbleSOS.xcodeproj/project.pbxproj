@@ -408,6 +408,7 @@
 				INFOPLIST_FILE = PebbleSOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d24baf5-827b-4adf-abdd-3114e0d6e742";
 			};
 			name = Debug;
 		};
@@ -419,6 +420,7 @@
 				INFOPLIST_FILE = PebbleSOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d24baf5-827b-4adf-abdd-3114e0d6e742";
 			};
 			name = Release;
 		};

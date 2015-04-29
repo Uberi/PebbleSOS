@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PebbleSOS-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PebbleSOS-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PebbleSOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>97BA1852C638637AC7B4925A</key>
+		<key>207026E1295ADE404318E57C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2869969DA7B99425C428DC9</key>
+		<key>56DCFBFC4331712914EBA86D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B482EE9807262107FBEB3A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8932126175C31E15A897806E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2869969DA7B99425C428DC9"
+               BlueprintIdentifier = "5B482EE9807262107FBEB3A7"
                BuildableName = "libPods-PebbleSOS.a"
                BlueprintName = "Pods-PebbleSOS"
                ReferencedContainer = "container:Pods.xcodeproj">

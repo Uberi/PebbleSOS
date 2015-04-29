@@ -2,6 +2,7 @@ platform :ios, '8.0'
 target 'PebbleSOS' do
 pod 'PebbleKit'
 pod 'AFNetworking', '2.5.3'
+pod 'Facebook-iOS-SDK'
 end
 
 
