@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <PBPebbleCentralDelegate>
 
 @end
 
@@ -38,6 +39,18 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.connectedWatch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
+    NSLog(@"Last connected watch: %@", self.connectedWatch);
+    
+    [[PBPebbleCentral defaultCentral] setDelegate:self];
+    
+    [self.connectedWatch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
+        NSLog(@"Received message: %@", update);
+        return YES;
+    }];
+    
+    [FBSDKLoginButton class];
+    
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
 }
@@ -50,6 +63,20 @@
                                                           openURL:url
                                                 sourceApplication:sourceApplication
                                                        annotation:annotation];
+}
+
+-(void) pebbleCentral:(PBPebbleCentral *)central watchDidConnect:(PBWatch *)watch isNew:(BOOL)isNew {
+    NSLog(@"Pebble connected: %@", [watch name]);
+
+    self.connectedWatch = watch;
+}
+
+-(void) pebbleCentral:(PBPebbleCentral *)central watchDidDisconnect:(PBWatch *)watch {
+    NSLog(@"Pebble disconnected: %@", [watch name]);
+
+    if (self.connectedWatch == watch || [watch isEqual:self.connectedWatch]) {
+        self.connectedWatch = nil;
+    }
 }
 
 @end

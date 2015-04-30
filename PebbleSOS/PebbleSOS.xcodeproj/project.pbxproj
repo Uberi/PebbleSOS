@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C3E5FEEBCAA04B06B99762C /* libPods-PebbleSOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */; };
+		5A345B2F1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A345B2E1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m */; };
+		5A345B351AF1E1E7005774C2 /* PostHelpExplainedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A345B341AF1E1E7005774C2 /* PostHelpExplainedViewController.m */; };
 		5ADFF77D1AF0462600E74689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77C1AF0462600E74689 /* main.m */; };
 		5ADFF7801AF0462600E74689 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77F1AF0462600E74689 /* AppDelegate.m */; };
 		5ADFF7831AF0462600E74689 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF7821AF0462600E74689 /* ViewController.m */; };
@@ -30,6 +32,10 @@
 /* Begin PBXFileReference section */
 		23D27C7B2587B05CD2AC94D5 /* Pods-PebbleSOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleSOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleSOS/Pods-PebbleSOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PebbleSOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A345B2D1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatIsPebbleSOSViewController.h; sourceTree = "<group>"; };
+		5A345B2E1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatIsPebbleSOSViewController.m; sourceTree = "<group>"; };
+		5A345B331AF1E1E7005774C2 /* PostHelpExplainedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostHelpExplainedViewController.h; sourceTree = "<group>"; };
+		5A345B341AF1E1E7005774C2 /* PostHelpExplainedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHelpExplainedViewController.m; sourceTree = "<group>"; };
 		5ADFF7771AF0462600E74689 /* PebbleSOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PebbleSOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF77B1AF0462600E74689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADFF77C1AF0462600E74689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +71,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A345B301AF1E1AE005774C2 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A345B321AF1E1C9005774C2 /* mainVC */,
+				5A345B311AF1E1C4005774C2 /* whatIsVC */,
+				5A345B361AF1E1EC005774C2 /* postHelpVC */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		5A345B311AF1E1C4005774C2 /* whatIsVC */ = {
+			isa = PBXGroup;
+			children = (
+				5A345B2D1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.h */,
+				5A345B2E1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m */,
+			);
+			name = whatIsVC;
+			sourceTree = "<group>";
+		};
+		5A345B321AF1E1C9005774C2 /* mainVC */ = {
+			isa = PBXGroup;
+			children = (
+				5ADFF7811AF0462600E74689 /* ViewController.h */,
+				5ADFF7821AF0462600E74689 /* ViewController.m */,
+			);
+			name = mainVC;
+			sourceTree = "<group>";
+		};
+		5A345B361AF1E1EC005774C2 /* postHelpVC */ = {
+			isa = PBXGroup;
+			children = (
+				5A345B331AF1E1E7005774C2 /* PostHelpExplainedViewController.h */,
+				5A345B341AF1E1E7005774C2 /* PostHelpExplainedViewController.m */,
+			);
+			name = postHelpVC;
+			sourceTree = "<group>";
+		};
 		5ADFF76E1AF0462600E74689 = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +131,9 @@
 		5ADFF7791AF0462600E74689 /* PebbleSOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A345B301AF1E1AE005774C2 /* view controllers */,
 				5ADFF77E1AF0462600E74689 /* AppDelegate.h */,
 				5ADFF77F1AF0462600E74689 /* AppDelegate.m */,
-				5ADFF7811AF0462600E74689 /* ViewController.h */,
-				5ADFF7821AF0462600E74689 /* ViewController.m */,
 				5ADFF7841AF0462600E74689 /* Main.storyboard */,
 				5ADFF7871AF0462600E74689 /* Images.xcassets */,
 				5ADFF7891AF0462600E74689 /* LaunchScreen.xib */,
@@ -278,8 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A345B2F1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m in Sources */,
 				5ADFF7831AF0462600E74689 /* ViewController.m in Sources */,
 				5ADFF7801AF0462600E74689 /* AppDelegate.m in Sources */,
+				5A345B351AF1E1E7005774C2 /* PostHelpExplainedViewController.m in Sources */,
 				5ADFF77D1AF0462600E74689 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

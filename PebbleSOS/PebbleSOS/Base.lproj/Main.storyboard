@@ -1,25 +1,422 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PebbleSOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-3w-98R">
+                                <rect key="frame" x="53" y="50" width="214" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="WpV-Ub-GhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Safety Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Km-NJs">
+                                <rect key="frame" x="56" y="87" width="209" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HyV-6G-7MM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJo-IV-Ohg" userLabel="What is PebbleSOS?">
+                                <rect key="frame" x="60" y="153" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0zu-RM-i4G"/>
+                                </constraints>
+                                <state key="normal" title="What is PebbleSOS?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5LQ-cz-AQU" kind="presentation" identifier="WhatIsPebbleSOSModalSegue" id="bvn-0c-Juo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-nj-aNj">
+                                <rect key="frame" x="60" y="333" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CxQ-Ts-dps"/>
+                                </constraints>
+                                <state key="normal" title="Post Help Messages!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VYK-br-J4J" kind="presentation" identifier="postHelpMessageModalSegue" id="JhS-wo-xab"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-pn-xO0" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="60" y="243" width="200" height="45"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="W0e-nH-Tvs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k8m-nj-aNj" firstAttribute="top" secondItem="EcP-pn-xO0" secondAttribute="bottom" constant="45" id="030-s8-vNr"/>
+                            <constraint firstAttribute="trailing" secondItem="zJo-IV-Ohg" secondAttribute="trailing" constant="60" id="3DU-b7-iKl"/>
+                            <constraint firstItem="Pv8-3w-98R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="53" id="BPA-xA-OXh"/>
+                            <constraint firstAttribute="trailing" secondItem="Pv8-3w-98R" secondAttribute="trailing" constant="53" id="CBd-Zq-YY3"/>
+                            <constraint firstItem="W1J-Km-NJs" firstAttribute="top" secondItem="Pv8-3w-98R" secondAttribute="bottom" id="CfI-JN-Hfa"/>
+                            <constraint firstItem="EcP-pn-xO0" firstAttribute="top" secondItem="zJo-IV-Ohg" secondAttribute="bottom" constant="45" id="Cki-ic-1P1"/>
+                            <constraint firstAttribute="trailing" secondItem="W1J-Km-NJs" secondAttribute="trailing" constant="55" id="GwB-TY-kh0"/>
+                            <constraint firstItem="Pv8-3w-98R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="NBs-jr-Qir"/>
+                            <constraint firstAttribute="trailing" secondItem="k8m-nj-aNj" secondAttribute="trailing" constant="60" id="Nck-IL-Na3"/>
+                            <constraint firstItem="k8m-nj-aNj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="bPu-M7-vZB"/>
+                            <constraint firstItem="zJo-IV-Ohg" firstAttribute="top" secondItem="W1J-Km-NJs" secondAttribute="bottom" constant="45" id="fom-pE-44v"/>
+                            <constraint firstAttribute="trailing" secondItem="EcP-pn-xO0" secondAttribute="trailing" constant="60" id="jd4-Rz-YCT"/>
+                            <constraint firstItem="W1J-Km-NJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="56" id="lGO-Jf-Hrx"/>
+                            <constraint firstItem="EcP-pn-xO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="ty3-fe-GU9"/>
+                            <constraint firstItem="zJo-IV-Ohg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="xFU-lC-p6i"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="FBLoginButton" destination="EcP-pn-xO0" id="Oh9-dE-1Pz"/>
+                        <outlet property="pebbleSOSButton" destination="zJo-IV-Ohg" id="G4f-o3-b7Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Post Help Explained View Controller-->
+        <scene sceneID="uXi-SP-5TF">
+            <objects>
+                <viewController id="VYK-br-J4J" customClass="PostHelpExplainedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wN5-Aw-8oo"/>
+                        <viewControllerLayoutGuide type="bottom" id="hgl-HO-E7o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V2p-B2-sf0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.44999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWM-zL-HX9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-0O-SZQ">
+                                        <rect key="frame" x="36" y="35" width="247" height="498"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PebbleSOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-C2-ROM">
+                                                <rect key="frame" x="14" y="20" width="219" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="DGL-dK-AOr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="38"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Safety Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-Z9-8qH">
+                                                <rect key="frame" x="19" y="57" width="209" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Auw-Gb-Qw8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How does this work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nx-nR-BnG">
+                                                <rect key="frame" x="14" y="87" width="219" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="kF5-Zz-fVl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When facing dangerous situations, just shake your Pebble Watch really hard. A five-seconds countdown will start on your watch " lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuY-6W-6N7">
+                                                <rect key="frame" x="14" y="104" width="219" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="d4d-3c-Z7a"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- If you don't cancel the countdown, a status will automatically be posted to your Facebook calling for help" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAR-7I-kMW">
+                                                <rect key="frame" x="14" y="175" width="219" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="4uH-ss-RPr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Q2-jM-k11">
+                                                <rect key="frame" x="14" y="234" width="219" height="98"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="98" id="QW6-21-b1a"/>
+                                                </constraints>
+                                                <string key="text">ie. if you're in London, England. The status will be "Help needed!! My location: 51.509979, -0.133700 #PleaseHelp #PebbleSOS", with longititude and latitude indicating your exact location.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once your friends see that status, your help should be on your way!" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnV-m4-8Wj">
+                                                <rect key="frame" x="14" y="334" width="219" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="Uwt-TZ-BQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM0-ur-Akb">
+                                                <rect key="frame" x="14" y="386" width="219" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="67" id="q8q-Nw-ZAW"/>
+                                                </constraints>
+                                                <string key="text">Please do not abuse this app, the intention of this application is to save friends/yourself in serious danger or emergency situations</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-f7-AEq">
+                                                <rect key="frame" x="80" y="454" width="87" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="4Lq-xF-X2f"/>
+                                                </constraints>
+                                                <state key="normal" title="Got it!">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dismiss:" destination="VYK-br-J4J" eventType="touchUpInside" id="tXb-hJ-m1E"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0uu-f7-AEq" secondAttribute="bottom" constant="9" id="1fc-ur-RA5"/>
+                                            <constraint firstItem="LnV-m4-8Wj" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="4uo-ym-b7f"/>
+                                            <constraint firstItem="9Q2-jM-k11" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="9Q3-iQ-nie"/>
+                                            <constraint firstItem="9Q2-jM-k11" firstAttribute="top" secondItem="oAR-7I-kMW" secondAttribute="bottom" constant="8" id="9rM-nY-BUR"/>
+                                            <constraint firstItem="Tkl-C2-ROM" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="BRK-3k-Tab"/>
+                                            <constraint firstAttribute="trailing" secondItem="LnV-m4-8Wj" secondAttribute="trailing" constant="14" id="CEm-mc-TAU"/>
+                                            <constraint firstAttribute="trailing" secondItem="gM0-ur-Akb" secondAttribute="trailing" constant="14" id="E2b-sz-rId"/>
+                                            <constraint firstAttribute="trailing" secondItem="oAR-7I-kMW" secondAttribute="trailing" constant="14" id="Em5-4b-amH"/>
+                                            <constraint firstAttribute="trailing" secondItem="wuY-6W-6N7" secondAttribute="trailing" constant="14" id="Fs4-ut-Kim"/>
+                                            <constraint firstItem="5nx-nR-BnG" firstAttribute="top" secondItem="XUd-Z9-8qH" secondAttribute="bottom" constant="8" id="HKa-sh-h1x"/>
+                                            <constraint firstItem="oAR-7I-kMW" firstAttribute="top" secondItem="wuY-6W-6N7" secondAttribute="bottom" constant="1" id="Iai-8e-7Ye"/>
+                                            <constraint firstItem="oAR-7I-kMW" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="RaO-qA-YT9"/>
+                                            <constraint firstItem="wuY-6W-6N7" firstAttribute="top" secondItem="5nx-nR-BnG" secondAttribute="bottom" constant="-4" id="RxF-5h-yKh"/>
+                                            <constraint firstItem="5nx-nR-BnG" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="SaN-Hh-vRe"/>
+                                            <constraint firstAttribute="trailing" secondItem="0uu-f7-AEq" secondAttribute="trailing" constant="80" id="Vb6-oc-1yq"/>
+                                            <constraint firstItem="Tkl-C2-ROM" firstAttribute="top" secondItem="HAt-0O-SZQ" secondAttribute="top" constant="20" id="Vr5-yq-5VQ"/>
+                                            <constraint firstItem="wuY-6W-6N7" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="ZKU-7x-WRE"/>
+                                            <constraint firstAttribute="trailing" secondItem="XUd-Z9-8qH" secondAttribute="trailing" constant="19" id="bAW-GK-fcr"/>
+                                            <constraint firstItem="0uu-f7-AEq" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="80" id="dO9-G5-f1X"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tkl-C2-ROM" secondAttribute="trailing" constant="14" id="ggB-ft-qAa"/>
+                                            <constraint firstItem="gM0-ur-Akb" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="14" id="hgs-Mu-x3x"/>
+                                            <constraint firstItem="XUd-Z9-8qH" firstAttribute="top" secondItem="Tkl-C2-ROM" secondAttribute="bottom" id="kVE-De-eBJ"/>
+                                            <constraint firstItem="LnV-m4-8Wj" firstAttribute="top" secondItem="9Q2-jM-k11" secondAttribute="bottom" constant="2" id="qUO-GM-fpm"/>
+                                            <constraint firstItem="XUd-Z9-8qH" firstAttribute="leading" secondItem="HAt-0O-SZQ" secondAttribute="leading" constant="19" id="srz-BE-RRa"/>
+                                            <constraint firstAttribute="trailing" secondItem="5nx-nR-BnG" secondAttribute="trailing" constant="14" id="yG4-Ha-2AJ"/>
+                                            <constraint firstItem="gM0-ur-Akb" firstAttribute="top" secondItem="LnV-m4-8Wj" secondAttribute="bottom" constant="1" id="yK1-nb-SFb"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Q2-jM-k11" secondAttribute="trailing" constant="14" id="ybN-K6-TLN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HAt-0O-SZQ" secondAttribute="trailing" constant="37" id="YuF-mg-tha"/>
+                                    <constraint firstItem="HAt-0O-SZQ" firstAttribute="top" secondItem="DWM-zL-HX9" secondAttribute="top" constant="35" id="bHc-bL-00s"/>
+                                    <constraint firstItem="HAt-0O-SZQ" firstAttribute="leading" secondItem="DWM-zL-HX9" secondAttribute="leading" constant="36" id="eX9-SI-zHY"/>
+                                    <constraint firstAttribute="bottom" secondItem="HAt-0O-SZQ" secondAttribute="bottom" constant="35" id="fTf-Em-sAb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DWM-zL-HX9" secondAttribute="trailing" constant="-16" id="2FD-Gw-PLz"/>
+                            <constraint firstItem="DWM-zL-HX9" firstAttribute="leading" secondItem="V2p-B2-sf0" secondAttribute="leadingMargin" constant="-16" id="4nX-Y6-UGv"/>
+                            <constraint firstItem="DWM-zL-HX9" firstAttribute="top" secondItem="wN5-Aw-8oo" secondAttribute="bottom" constant="-20" id="CEN-Hv-Vk9"/>
+                            <constraint firstItem="hgl-HO-E7o" firstAttribute="top" secondItem="DWM-zL-HX9" secondAttribute="bottom" id="hNa-A0-JhE"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isr-Gd-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="864"/>
+        </scene>
+        <!--What Is PebbleSOS View Controller-->
+        <scene sceneID="2zK-8Y-a1s">
+            <objects>
+                <viewController id="5LQ-cz-AQU" customClass="WhatIsPebbleSOSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Sp-bv-c2F"/>
+                        <viewControllerLayoutGuide type="bottom" id="FV3-vG-Scq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P2v-EP-XCt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZL-50-shg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skf-v7-MpN">
+                                        <rect key="frame" x="36" y="35" width="247" height="498"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PebbleSOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-pf-xYC">
+                                                <rect key="frame" x="14" y="20" width="219" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="dlL-pc-4V3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="38"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Safety Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N2-HD-J39">
+                                                <rect key="frame" x="19" y="57" width="209" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="9k2-2S-86j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The PebbleSOS Companion App will allow you to inform your friends on Facebook when you're in danger!" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfB-wc-8Tv">
+                                                <rect key="frame" x="14" y="87" width="219" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="F57-zW-hY6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Log in to your Facebook account through the main page of this app, granting access to publish statuses" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-yD-sJc">
+                                                <rect key="frame" x="14" y="145" width="219" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="OwG-2m-Lhk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcI-SH-gOL">
+                                                <rect key="frame" x="14" y="204" width="219" height="78"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="78" id="qxP-Dz-rQd"/>
+                                                </constraints>
+                                                <string key="text">2. When facing dangerous situations (kidnap or rape), just shake your Pebble Watch really hard. A five-seconds countdown will start on your watch </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-wO-jHs">
+                                                <rect key="frame" x="14" y="290" width="219" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="79" id="OY7-s8-Xcc"/>
+                                                </constraints>
+                                                <string key="text">If you don't cancel the countdown, a status will automatically be posted to your Facebook, calling for "Help!" with your current location attached, this will be visible to all your friends.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t8-NA-8ke">
+                                                <rect key="frame" x="14" y="377" width="219" height="69"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="69" id="lLQ-W8-B3T"/>
+                                                </constraints>
+                                                <string key="text">Please do not abuse this app, the intention of this application is to save friends/yourself in serious danger or emergency situations</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BN6-CY-sSw">
+                                                <rect key="frame" x="80" y="445" width="87" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="nTE-Ui-jUa"/>
+                                                </constraints>
+                                                <state key="normal" title="Got it!">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dismiss:" destination="5LQ-cz-AQU" eventType="touchUpInside" id="mO6-CR-HNc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="EcI-SH-gOL" firstAttribute="top" secondItem="6Az-yD-sJc" secondAttribute="bottom" constant="8" id="0R4-yq-ye2"/>
+                                            <constraint firstAttribute="trailing" secondItem="BN6-CY-sSw" secondAttribute="trailing" constant="80" id="271-eo-DBn"/>
+                                            <constraint firstItem="xW4-wO-jHs" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="40u-lw-pjB"/>
+                                            <constraint firstItem="mjH-pf-xYC" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="9Bh-wa-Cbh"/>
+                                            <constraint firstItem="1N2-HD-J39" firstAttribute="top" secondItem="mjH-pf-xYC" secondAttribute="bottom" id="9U9-qU-FzJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="UfB-wc-8Tv" secondAttribute="trailing" constant="14" id="Czj-kw-8Xb"/>
+                                            <constraint firstItem="UfB-wc-8Tv" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="EVs-Hd-0Qp"/>
+                                            <constraint firstItem="6Az-yD-sJc" firstAttribute="top" secondItem="UfB-wc-8Tv" secondAttribute="bottom" constant="8" id="Gn8-XE-i8c"/>
+                                            <constraint firstAttribute="trailing" secondItem="1N2-HD-J39" secondAttribute="trailing" constant="19" id="IoB-Wi-VY6"/>
+                                            <constraint firstAttribute="trailing" secondItem="EcI-SH-gOL" secondAttribute="trailing" constant="14" id="MCc-K5-xQv"/>
+                                            <constraint firstAttribute="height" constant="418" id="Q3O-ve-2DZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Az-yD-sJc" secondAttribute="trailing" constant="14" id="Rme-D9-hRA"/>
+                                            <constraint firstItem="mjH-pf-xYC" firstAttribute="top" secondItem="skf-v7-MpN" secondAttribute="top" constant="20" id="Vuc-ax-qXH"/>
+                                            <constraint firstItem="4t8-NA-8ke" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="WlO-Se-ILf"/>
+                                            <constraint firstAttribute="trailing" secondItem="4t8-NA-8ke" secondAttribute="trailing" constant="14" id="X3s-8d-20U"/>
+                                            <constraint firstAttribute="trailing" secondItem="xW4-wO-jHs" secondAttribute="trailing" constant="14" id="eRc-eQ-fi6"/>
+                                            <constraint firstAttribute="bottom" secondItem="BN6-CY-sSw" secondAttribute="bottom" constant="18" id="eTz-sl-obe"/>
+                                            <constraint firstItem="xW4-wO-jHs" firstAttribute="top" secondItem="EcI-SH-gOL" secondAttribute="bottom" constant="8" id="kJe-Dt-AYW"/>
+                                            <constraint firstItem="1N2-HD-J39" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="19" id="ll7-Ns-cBI"/>
+                                            <constraint firstAttribute="trailing" secondItem="mjH-pf-xYC" secondAttribute="trailing" constant="14" id="m8w-6x-VuM"/>
+                                            <constraint firstItem="BN6-CY-sSw" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="80" id="nsE-XU-Ypv"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EcI-SH-gOL" secondAttribute="trailing" constant="14" id="nw5-kT-90L"/>
+                                            <constraint firstItem="6Az-yD-sJc" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="oKP-XK-bD1"/>
+                                            <constraint firstItem="EcI-SH-gOL" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="pL9-PB-l3j"/>
+                                            <constraint firstItem="UfB-wc-8Tv" firstAttribute="top" secondItem="1N2-HD-J39" secondAttribute="bottom" constant="8" id="uvK-bz-yIK"/>
+                                            <constraint firstItem="4t8-NA-8ke" firstAttribute="top" secondItem="xW4-wO-jHs" secondAttribute="bottom" constant="8" id="yzu-Ik-DiU"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Q3O-ve-2DZ"/>
+                                                <exclude reference="nw5-kT-90L"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="skf-v7-MpN" firstAttribute="top" secondItem="uZL-50-shg" secondAttribute="top" constant="35" id="HsA-dC-RhV"/>
+                                    <constraint firstAttribute="trailing" secondItem="skf-v7-MpN" secondAttribute="trailing" constant="37" id="LpA-us-23L"/>
+                                    <constraint firstAttribute="bottom" secondItem="skf-v7-MpN" secondAttribute="bottom" constant="35" id="oWq-KS-jRt"/>
+                                    <constraint firstItem="skf-v7-MpN" firstAttribute="leading" secondItem="uZL-50-shg" secondAttribute="leading" constant="36" id="r3h-B1-OfD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FV3-vG-Scq" firstAttribute="top" secondItem="uZL-50-shg" secondAttribute="bottom" id="OSX-o1-fm0"/>
+                            <constraint firstItem="uZL-50-shg" firstAttribute="top" secondItem="P2v-EP-XCt" secondAttribute="top" id="Z98-6I-FJy"/>
+                            <constraint firstAttribute="trailing" secondItem="uZL-50-shg" secondAttribute="trailing" id="iVA-TN-9xc"/>
+                            <constraint firstItem="uZL-50-shg" firstAttribute="leading" secondItem="P2v-EP-XCt" secondAttribute="leading" id="lbH-jB-zq3"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="gotItButton" destination="BN6-CY-sSw" id="5ik-if-8oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L1g-O1-TKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="190"/>
         </scene>
     </scenes>
 </document>

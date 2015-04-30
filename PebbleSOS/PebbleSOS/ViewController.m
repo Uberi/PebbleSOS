@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <PebbleKit/PebbleKit.h>
+
 @import CoreLocation;
 
 @interface ViewController () <CLLocationManagerDelegate>
@@ -24,12 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    //loginButton.readPermissions = @[@"email", @"user_friends"];
-    loginButton.publishPermissions = @[@"publish_actions"];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
-    
+    self.FBLoginButton.publishPermissions = @[@"publish_actions"];
     
     UIButton *postData = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [postData setTitle:@"post" forState:UIControlStateNormal];
@@ -50,11 +45,15 @@
 #pragma mark - CLLocationManager Delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    CLLocation *location = locations[0];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location" message:@"?" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    
+    [alert show];
+    [locationManager stopUpdatingLocation];
+    CLLocation *location = [locations lastObject];
     latitude = location.coordinate.latitude;
     longitude = location.coordinate.longitude;
     
-    NSString *message = [NSString stringWithFormat:@"My location: %f, %f", latitude, longitude];
+    NSString *message = [NSString stringWithFormat:@"Help needed!! My location: %f, %f", latitude, longitude];
     if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
         [[[FBSDKGraphRequest alloc]
           initWithGraphPath:@"me/feed"
