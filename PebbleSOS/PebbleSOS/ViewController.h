@@ -12,8 +12,10 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *FBLoginButton;
-
 @property (weak, nonatomic) IBOutlet UIButton *pebbleSOSButton;
+
+-(void) print;
+-(void) postHelp;
 
 @end
 

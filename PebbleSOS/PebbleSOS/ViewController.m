@@ -20,13 +20,15 @@
     
     CGFloat latitude;
     CGFloat longitude;
+    UIButton *postData;
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.FBLoginButton.publishPermissions = @[@"publish_actions"];
     
-    UIButton *postData = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    postData = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [postData setTitle:@"post" forState:UIControlStateNormal];
     postData.frame = CGRectMake(38, 364 ,157,25);
     [postData addTarget:self action:@selector(postData:) forControlEvents:UIControlEventTouchUpInside];
@@ -35,6 +37,7 @@
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager requestAlwaysAuthorization];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +56,7 @@
     latitude = location.coordinate.latitude;
     longitude = location.coordinate.longitude;
     
-    NSString *message = [NSString stringWithFormat:@"Help needed!! My location: %f, %f", latitude, longitude];
+    NSString *message = [NSString stringWithFormat:@"Help neededd!! My location: %f, %f", latitude, longitude];
     if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
         [[[FBSDKGraphRequest alloc]
           initWithGraphPath:@"me/feed"
@@ -93,6 +96,14 @@
 - (void) postData:(UIButton *) sender {
     [locationManager startUpdatingLocation];
 
+}
+
+- (void) postHelp {
+     [locationManager startUpdatingLocation];
+}
+
+- (void) print {
+    NSLog(@"print this");
 }
 
 @end
