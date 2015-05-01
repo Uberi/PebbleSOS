@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ViewController.h"
+
 
 @interface AppDelegate () <PBPebbleCentralDelegate>
 
@@ -42,12 +44,30 @@
     self.connectedWatch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     NSLog(@"Last connected watch: %@", self.connectedWatch);
     
+    uuid_t myAppUUIDbytes;
+    NSUUID *myAppUUID = [[NSUUID alloc] initWithUUIDString:@"2ee28074-f8d3-4450-9774-6527e5514d1f"];
+    [myAppUUID getUUIDBytes:myAppUUIDbytes];
+    
+    [[PBPebbleCentral defaultCentral] setAppUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
+    
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     
-    [self.connectedWatch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
-        NSLog(@"Received message: %@", update);
-        return YES;
+    [self.connectedWatch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
+        if (isAppMessagesSupported) {
+            NSLog(@"This Pebble supports app message!");
+            
+            [self.connectedWatch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
+                NSLog(@"Received message: %@", update);
+                [self performSelector:@selector(print) withObject:nil afterDelay:3.0];
+                return YES;
+            }];
+        }
+        else {
+            NSLog(@":( - This Pebble does not support app message!");
+        }
     }];
+    
+   
     
     [FBSDKLoginButton class];
     
@@ -65,6 +85,8 @@
                                                        annotation:annotation];
 }
 
+
+
 -(void) pebbleCentral:(PBPebbleCentral *)central watchDidConnect:(PBWatch *)watch isNew:(BOOL)isNew {
     NSLog(@"Pebble connected: %@", [watch name]);
 
@@ -77,6 +99,13 @@
     if (self.connectedWatch == watch || [watch isEqual:self.connectedWatch]) {
         self.connectedWatch = nil;
     }
+}
+
+-(void) print{
+    NSLog(@"called 1321");
+    ViewController* vc = (ViewController*) self.window.rootViewController;
+    [vc postHelp];
+    NSLog(@"called");
 }
 
 @end
