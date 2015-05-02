@@ -10,6 +10,7 @@
 		4C3E5FEEBCAA04B06B99762C /* libPods-PebbleSOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8CD1E46C1B47BAEC99681D /* libPods-PebbleSOS.a */; };
 		5A345B2F1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A345B2E1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m */; };
 		5A345B351AF1E1E7005774C2 /* PostHelpExplainedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A345B341AF1E1E7005774C2 /* PostHelpExplainedViewController.m */; };
+		5A3D7FAA1AF558C500D3312B /* logo6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3D7FA91AF558C500D3312B /* logo6.png */; };
 		5ADFF77D1AF0462600E74689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77C1AF0462600E74689 /* main.m */; };
 		5ADFF7801AF0462600E74689 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF77F1AF0462600E74689 /* AppDelegate.m */; };
 		5ADFF7831AF0462600E74689 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF7821AF0462600E74689 /* ViewController.m */; };
@@ -17,6 +18,7 @@
 		5ADFF7881AF0462600E74689 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADFF7871AF0462600E74689 /* Images.xcassets */; };
 		5ADFF78B1AF0462600E74689 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADFF7891AF0462600E74689 /* LaunchScreen.xib */; };
 		5ADFF7971AF0462600E74689 /* PebbleSOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFF7961AF0462600E74689 /* PebbleSOSTests.m */; };
+		5AE94B841AF3129E0006B46D /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AE94B831AF3129E0006B46D /* bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		5A345B2E1AF1E1A4005774C2 /* WhatIsPebbleSOSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatIsPebbleSOSViewController.m; sourceTree = "<group>"; };
 		5A345B331AF1E1E7005774C2 /* PostHelpExplainedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostHelpExplainedViewController.h; sourceTree = "<group>"; };
 		5A345B341AF1E1E7005774C2 /* PostHelpExplainedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHelpExplainedViewController.m; sourceTree = "<group>"; };
+		5A3D7FA91AF558C500D3312B /* logo6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo6.png; path = ../../../../../Desktop/logo6.png; sourceTree = "<group>"; };
 		5ADFF7771AF0462600E74689 /* PebbleSOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PebbleSOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF77B1AF0462600E74689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADFF77C1AF0462600E74689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		5ADFF7901AF0462600E74689 /* PebbleSOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleSOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADFF7951AF0462600E74689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADFF7961AF0462600E74689 /* PebbleSOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleSOSTests.m; sourceTree = "<group>"; };
+		5AE94B831AF3129E0006B46D /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../../../Downloads/bg.png; sourceTree = "<group>"; };
 		B0B833ED85CF8A254480CDA3 /* Pods-PebbleSOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleSOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleSOS/Pods-PebbleSOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +140,9 @@
 				5ADFF77F1AF0462600E74689 /* AppDelegate.m */,
 				5ADFF7841AF0462600E74689 /* Main.storyboard */,
 				5ADFF7871AF0462600E74689 /* Images.xcassets */,
+				5AE94B831AF3129E0006B46D /* bg.png */,
 				5ADFF7891AF0462600E74689 /* LaunchScreen.xib */,
+				5A3D7FA91AF558C500D3312B /* logo6.png */,
 				5ADFF77A1AF0462600E74689 /* Supporting Files */,
 			);
 			path = PebbleSOS;
@@ -267,6 +273,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3D7FAA1AF558C500D3312B /* logo6.png in Resources */,
+				5AE94B841AF3129E0006B46D /* bg.png in Resources */,
 				5ADFF7861AF0462600E74689 /* Main.storyboard in Resources */,
 				5ADFF78B1AF0462600E74689 /* LaunchScreen.xib in Resources */,
 				5ADFF7881AF0462600E74689 /* Images.xcassets in Resources */,

@@ -44,6 +44,7 @@
     self.connectedWatch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     NSLog(@"Last connected watch: %@", self.connectedWatch);
     
+    //UUID of the Pebble Project, so the phone knows which Pebble App is being connected to
     uuid_t myAppUUIDbytes;
     NSUUID *myAppUUID = [[NSUUID alloc] initWithUUIDString:@"2ee28074-f8d3-4450-9774-6527e5514d1f"];
     [myAppUUID getUUIDBytes:myAppUUIDbytes];
@@ -52,13 +53,14 @@
     
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     
+    //check if Pebble supports app message - a bidirectional communication between the Pebble app and the companion app (iOS app)
     [self.connectedWatch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
         if (isAppMessagesSupported) {
             NSLog(@"This Pebble supports app message!");
-            
+            //notify Pebble that its message has been received by the iOS companion app
             [self.connectedWatch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
                 NSLog(@"Received message: %@", update);
-                [self performSelector:@selector(print) withObject:nil afterDelay:3.0];
+                [self performSelector:@selector(postHelpMessage) withObject:nil afterDelay:3.0];
                 return YES;
             }];
         }
@@ -66,8 +68,6 @@
             NSLog(@":( - This Pebble does not support app message!");
         }
     }];
-    
-   
     
     [FBSDKLoginButton class];
     
@@ -85,8 +85,6 @@
                                                        annotation:annotation];
 }
 
-
-
 -(void) pebbleCentral:(PBPebbleCentral *)central watchDidConnect:(PBWatch *)watch isNew:(BOOL)isNew {
     NSLog(@"Pebble connected: %@", [watch name]);
 
@@ -101,11 +99,11 @@
     }
 }
 
--(void) print{
-    NSLog(@"called 1321");
+-(void) postHelpMessage{
+    //NSLog(@"called 1321");
     ViewController* vc = (ViewController*) self.window.rootViewController;
     [vc postHelp];
-    NSLog(@"called");
+    //NSLog(@"called");
 }
 
 @end
