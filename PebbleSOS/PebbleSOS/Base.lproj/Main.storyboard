@@ -14,83 +14,130 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PebbleSOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-3w-98R">
-                                <rect key="frame" x="53" y="50" width="214" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="WpV-Ub-GhN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Safety Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Km-NJs">
-                                <rect key="frame" x="56" y="87" width="209" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="HyV-6G-7MM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJo-IV-Ohg" userLabel="What is PebbleSOS?">
-                                <rect key="frame" x="60" y="153" width="200" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="0zu-RM-i4G"/>
-                                </constraints>
-                                <state key="normal" title="What is PebbleSOS?">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5LQ-cz-AQU" kind="presentation" identifier="WhatIsPebbleSOSModalSegue" id="bvn-0c-Juo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-nj-aNj">
-                                <rect key="frame" x="60" y="333" width="200" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="CxQ-Ts-dps"/>
-                                </constraints>
-                                <state key="normal" title="Post Help Messages!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="VYK-br-J4J" kind="presentation" identifier="postHelpMessageModalSegue" id="JhS-wo-xab"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-pn-xO0" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="60" y="243" width="200" height="45"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="W0e-nH-Tvs"/>
-                                </constraints>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZxH-GU-lYa">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="573"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dch-sE-zFa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9dK-x5-MXJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Safety Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Km-NJs">
+                                            <rect key="frame" x="55" y="81" width="209" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="aeN-6f-3d2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJo-IV-Ohg" userLabel="What is PebbleSOS?">
+                                            <rect key="frame" x="56" y="152" width="200" height="45"/>
+                                            <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.67450980392156867" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="DvI-3m-2yE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                            <state key="normal" title="What is PebbleSOS?">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="5LQ-cz-AQU" kind="presentation" identifier="WhatIsPebbleSOSModalSegue" id="bvn-0c-Juo"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-pn-xO0" customClass="FBSDKLoginButton">
+                                            <rect key="frame" x="56" y="242" width="200" height="45"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="Tan-LL-bhY"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-nj-aNj">
+                                            <rect key="frame" x="55" y="332" width="200" height="45"/>
+                                            <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.67450980392156867" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="Via-go-lKy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                            <state key="normal" title="How to get help?">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="VYK-br-J4J" kind="presentation" identifier="postHelpMessageModalSegue" id="JhS-wo-xab"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Rr-KWL">
+                                            <rect key="frame" x="55" y="422" width="200" height="45"/>
+                                            <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.67450980392156867" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="a1d-uG-Adm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                            <state key="normal" title="Check permissions">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkPermission:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a6a-5Y-pjj"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PebbleSOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-3w-98R">
+                                            <rect key="frame" x="53" y="46" width="214" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="37" id="FcG-vr-dz5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="39"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Pv8-3w-98R" secondAttribute="trailing" constant="53" id="1cP-x5-GbY"/>
+                                        <constraint firstItem="W1J-Km-NJs" firstAttribute="top" secondItem="Pv8-3w-98R" secondAttribute="bottom" constant="-2" id="88d-zT-2yg"/>
+                                        <constraint firstItem="k8m-nj-aNj" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="55" id="8A2-Lt-sNv"/>
+                                        <constraint firstItem="zJo-IV-Ohg" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="56" id="B0V-Ab-1lZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="k8m-nj-aNj" secondAttribute="trailing" constant="65" id="IY7-Ra-oFf"/>
+                                        <constraint firstItem="zJo-IV-Ohg" firstAttribute="top" secondItem="W1J-Km-NJs" secondAttribute="bottom" constant="45" id="VJa-Pm-QfQ"/>
+                                        <constraint firstItem="k8m-nj-aNj" firstAttribute="top" secondItem="EcP-pn-xO0" secondAttribute="bottom" constant="45" id="ZPr-E0-NFA"/>
+                                        <constraint firstItem="CQO-Rr-KWL" firstAttribute="top" secondItem="k8m-nj-aNj" secondAttribute="bottom" constant="45" id="duD-KC-ktG"/>
+                                        <constraint firstAttribute="trailing" secondItem="zJo-IV-Ohg" secondAttribute="trailing" constant="64" id="e7d-fh-l3H"/>
+                                        <constraint firstItem="Pv8-3w-98R" firstAttribute="top" secondItem="9dK-x5-MXJ" secondAttribute="top" constant="46" id="eT9-j6-dWP"/>
+                                        <constraint firstAttribute="trailing" secondItem="CQO-Rr-KWL" secondAttribute="trailing" constant="65" id="hM8-o6-4qS"/>
+                                        <constraint firstAttribute="trailing" secondItem="EcP-pn-xO0" secondAttribute="trailing" constant="64" id="hal-N0-ltY"/>
+                                        <constraint firstItem="Pv8-3w-98R" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="53" id="hfV-Fe-yca"/>
+                                        <constraint firstAttribute="trailing" secondItem="W1J-Km-NJs" secondAttribute="trailing" constant="56" id="lLH-LM-u5F"/>
+                                        <constraint firstItem="W1J-Km-NJs" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="55" id="lLw-tj-hkz"/>
+                                        <constraint firstItem="CQO-Rr-KWL" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="55" id="oah-rG-mdU"/>
+                                        <constraint firstItem="EcP-pn-xO0" firstAttribute="leading" secondItem="9dK-x5-MXJ" secondAttribute="leading" constant="56" id="t8r-m7-TMq"/>
+                                        <constraint firstItem="EcP-pn-xO0" firstAttribute="top" secondItem="zJo-IV-Ohg" secondAttribute="bottom" constant="45" id="tdk-NX-zvc"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k8m-nj-aNj" firstAttribute="top" secondItem="EcP-pn-xO0" secondAttribute="bottom" constant="45" id="030-s8-vNr"/>
-                            <constraint firstAttribute="trailing" secondItem="zJo-IV-Ohg" secondAttribute="trailing" constant="60" id="3DU-b7-iKl"/>
-                            <constraint firstItem="Pv8-3w-98R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="53" id="BPA-xA-OXh"/>
-                            <constraint firstAttribute="trailing" secondItem="Pv8-3w-98R" secondAttribute="trailing" constant="53" id="CBd-Zq-YY3"/>
-                            <constraint firstItem="W1J-Km-NJs" firstAttribute="top" secondItem="Pv8-3w-98R" secondAttribute="bottom" id="CfI-JN-Hfa"/>
-                            <constraint firstItem="EcP-pn-xO0" firstAttribute="top" secondItem="zJo-IV-Ohg" secondAttribute="bottom" constant="45" id="Cki-ic-1P1"/>
-                            <constraint firstAttribute="trailing" secondItem="W1J-Km-NJs" secondAttribute="trailing" constant="55" id="GwB-TY-kh0"/>
-                            <constraint firstItem="Pv8-3w-98R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="NBs-jr-Qir"/>
-                            <constraint firstAttribute="trailing" secondItem="k8m-nj-aNj" secondAttribute="trailing" constant="60" id="Nck-IL-Na3"/>
-                            <constraint firstItem="k8m-nj-aNj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="bPu-M7-vZB"/>
-                            <constraint firstItem="zJo-IV-Ohg" firstAttribute="top" secondItem="W1J-Km-NJs" secondAttribute="bottom" constant="45" id="fom-pE-44v"/>
-                            <constraint firstAttribute="trailing" secondItem="EcP-pn-xO0" secondAttribute="trailing" constant="60" id="jd4-Rz-YCT"/>
-                            <constraint firstItem="W1J-Km-NJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="56" id="lGO-Jf-Hrx"/>
-                            <constraint firstItem="EcP-pn-xO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="ty3-fe-GU9"/>
-                            <constraint firstItem="zJo-IV-Ohg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="xFU-lC-p6i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dch-sE-zFa" secondAttribute="trailing" constant="-16" id="8C2-pR-59M"/>
+                            <constraint firstItem="ZxH-GU-lYa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="UgR-JT-6rp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dch-sE-zFa" secondAttribute="bottom" id="XER-yt-btc"/>
+                            <constraint firstItem="dch-sE-zFa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ZPJ-8A-8pc"/>
+                            <constraint firstItem="dch-sE-zFa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="egu-d3-OcS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZxH-GU-lYa" secondAttribute="trailing" constant="-16" id="hM8-gR-fPh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZxH-GU-lYa" secondAttribute="bottom" id="i79-Qh-wuX"/>
+                            <constraint firstItem="ZxH-GU-lYa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-25" id="tbe-0d-msc"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="480"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="FBLoginButton" destination="EcP-pn-xO0" id="Oh9-dE-1Pz"/>
                         <outlet property="pebbleSOSButton" destination="zJo-IV-Ohg" id="G4f-o3-b7Q"/>
+                        <outlet property="permissionButton" destination="CQO-Rr-KWL" id="IGf-X7-3KY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,11 +188,12 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When facing dangerous situations, just shake your Pebble Watch really hard. A five-seconds countdown will start on your watch " lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuY-6W-6N7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuY-6W-6N7">
                                                 <rect key="frame" x="14" y="104" width="219" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="d4d-3c-Z7a"/>
                                                 </constraints>
+                                                <string key="text">When facing dangerous situations, just shake your Pebble Watch really hard. A twenty-seconds countdown will start on your watch </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -189,11 +237,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-f7-AEq">
-                                                <rect key="frame" x="80" y="454" width="87" height="35"/>
+                                                <rect key="frame" x="80" y="459" width="87" height="30"/>
+                                                <color key="backgroundColor" red="0.2901960784" green="0.35686274509999999" blue="0.67450980390000004" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="4Lq-xF-X2f"/>
+                                                    <constraint firstAttribute="height" constant="30" id="4Lq-xF-X2f"/>
                                                 </constraints>
                                                 <state key="normal" title="Got it!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -252,6 +302,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="lastHeightConstraint" destination="4Lq-xF-X2f" id="flr-7q-sN2"/>
+                        <outlet property="lastLabel" destination="gM0-ur-Akb" id="FHR-Kd-WoV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Isr-Gd-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +370,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="78" id="qxP-Dz-rQd"/>
                                                 </constraints>
-                                                <string key="text">2. When facing dangerous situations (kidnap or rape), just shake your Pebble Watch really hard. A five-seconds countdown will start on your watch </string>
+                                                <string key="text">2. When facing dangerous situations (kidnap or rape), just shake your Pebble Watch really hard. A twenty-seconds countdown will start on your watch </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -342,11 +396,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BN6-CY-sSw">
-                                                <rect key="frame" x="80" y="445" width="87" height="35"/>
+                                                <rect key="frame" x="80" y="454" width="87" height="30"/>
+                                                <color key="backgroundColor" red="0.2901960784" green="0.35686274509999999" blue="0.67450980390000004" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="nTE-Ui-jUa"/>
+                                                    <constraint firstAttribute="height" constant="30" id="nTE-Ui-jUa"/>
                                                 </constraints>
                                                 <state key="normal" title="Got it!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -372,7 +428,7 @@
                                             <constraint firstItem="4t8-NA-8ke" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="14" id="WlO-Se-ILf"/>
                                             <constraint firstAttribute="trailing" secondItem="4t8-NA-8ke" secondAttribute="trailing" constant="14" id="X3s-8d-20U"/>
                                             <constraint firstAttribute="trailing" secondItem="xW4-wO-jHs" secondAttribute="trailing" constant="14" id="eRc-eQ-fi6"/>
-                                            <constraint firstAttribute="bottom" secondItem="BN6-CY-sSw" secondAttribute="bottom" constant="18" id="eTz-sl-obe"/>
+                                            <constraint firstAttribute="bottom" secondItem="BN6-CY-sSw" secondAttribute="bottom" constant="14" id="eTz-sl-obe"/>
                                             <constraint firstItem="xW4-wO-jHs" firstAttribute="top" secondItem="EcI-SH-gOL" secondAttribute="bottom" constant="8" id="kJe-Dt-AYW"/>
                                             <constraint firstItem="1N2-HD-J39" firstAttribute="leading" secondItem="skf-v7-MpN" secondAttribute="leading" constant="19" id="ll7-Ns-cBI"/>
                                             <constraint firstAttribute="trailing" secondItem="mjH-pf-xYC" secondAttribute="trailing" constant="14" id="m8w-6x-VuM"/>
@@ -412,6 +468,8 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="gotItButton" destination="BN6-CY-sSw" id="5ik-if-8oZ"/>
+                        <outlet property="lastHeightConstraint" destination="nTE-Ui-jUa" id="In0-BL-meZ"/>
+                        <outlet property="lastLabel" destination="4t8-NA-8ke" id="ZlB-OH-oPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1g-O1-TKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,4 +477,7 @@
             <point key="canvasLocation" x="926" y="190"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg.png" width="640" height="1136"/>
+    </resources>
 </document>

@@ -28,16 +28,9 @@
     [super viewDidLoad];
     self.FBLoginButton.publishPermissions = @[@"publish_actions"];
     
-    postData = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [postData setTitle:@"post" forState:UIControlStateNormal];
-    postData.frame = CGRectMake(38, 364 ,157,25);
-    [postData addTarget:self action:@selector(postData:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:postData];
-    
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager requestAlwaysAuthorization];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,17 +39,14 @@
 }
 
 #pragma mark - CLLocationManager Delegate
-
+//posting help message with exact location attached
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location" message:@"?" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    
-    [alert show];
     [locationManager stopUpdatingLocation];
     CLLocation *location = [locations lastObject];
     latitude = location.coordinate.latitude;
     longitude = location.coordinate.longitude;
     
-    NSString *message = [NSString stringWithFormat:@"Help neededd!! My location: %f, %f", latitude, longitude];
+    NSString *message = [NSString stringWithFormat:@"Emergency help needed!! My location: %f, %f. #PebbleSOS #PleaseHelp", latitude, longitude];
     if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
         [[[FBSDKGraphRequest alloc]
           initWithGraphPath:@"me/feed"
@@ -89,21 +79,36 @@
                 }
             }
         }];
-        
     }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your message is posted! Help is on the way" delegate:nil cancelButtonTitle:@"Thanks!" otherButtonTitles:nil];
+    
+    [alert show];
 }
-
-- (void) postData:(UIButton *) sender {
-    [locationManager startUpdatingLocation];
-
-}
-
+//updating current location
 - (void) postHelp {
      [locationManager startUpdatingLocation];
 }
-
-- (void) print {
-    NSLog(@"print this");
+//checking if the users have granted the app to post statues on facebook
+- (IBAction)checkPermission:(id)sender{
+    if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank you!" message:@"Permission to publishing statuses to your Facebook has been granted" delegate:nil cancelButtonTitle:@"No problem!" otherButtonTitles:nil];
+        
+        [alert show];
+    } else {
+        FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+        [login logInWithPublishPermissions:@[@"publish_actions"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+            if (error) {
+                NSLog(@"error");
+            } else if (result.isCancelled) {
+                NSLog(@"cancels");
+            } else {
+                if ([result.grantedPermissions containsObject:@"publish_actions"]) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank you!" message:@"Permission to publishing statuses to your Facebook has been granted" delegate:nil cancelButtonTitle:@"No problem!" otherButtonTitles:nil];
+                    [alert show];
+                }
+            }
+        }];
+    }
 }
 
 @end
