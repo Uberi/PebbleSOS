@@ -7,7 +7,13 @@
     "longName": "PebbleSOS",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/menu_icon.png",
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "2",
     "shortName": "PebbleSOS",
